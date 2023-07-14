@@ -31,6 +31,23 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    cursor: pointer;
+}
+.init::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 550px;
+    width: 8%;
+    height: 3px;
+    background-color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.init:hover::after {
+    opacity: 1;
 }
 .init2 h3{
     position: relative;
@@ -42,7 +59,25 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    cursor: pointer;
 }
+.init2::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 630px;
+    width: 11%;
+    height: 3px;
+    background-color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.init2:hover::after {
+    opacity: 1;
+}
+
 body h1{
     color: #F9FAFB;
     font-family: 'Poppins', sans-serif;
@@ -105,8 +140,15 @@ body h1{
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
     align-items: center; /* Centraliza o conteúdo verticalmente */
 }
-.ilust{
+.ilust {
     position: relative;
-    top: -392px;
     left: 750px;
+    animation: moveUpDown 2s ease-in-out infinite;
+    backface-visibility: hidden; /* Adicionado para melhorar a renderização */
+}
+
+@keyframes moveUpDown {
+    0% { top: -392px; }
+    50% { top: -400px; }
+    100% { top: -392px; }
 }
